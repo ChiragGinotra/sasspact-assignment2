@@ -1,4 +1,9 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Navigate,
+  Route,
+  Routes,
+} from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 
 import PageNotFound from "./pages/PageNotFound";
@@ -12,7 +17,7 @@ import Upload from "./pages/Upload";
 export default function App() {
   return (
     <>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route index element={<Navigate replace to="/login" />} />
           <Route path="login" element={<Login />} />
@@ -27,7 +32,7 @@ export default function App() {
 
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </>
   );
 }
